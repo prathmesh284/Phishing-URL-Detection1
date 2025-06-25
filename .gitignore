@@ -1,0 +1,8 @@
+# Files to ignore
+__pycache__
+Documents
+Lib
+Scripts
+model1.ipynb
+phishing_model.pkl
+pyvenv.cfg
