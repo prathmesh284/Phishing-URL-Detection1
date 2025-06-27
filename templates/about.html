@@ -1,60 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phishing URL Detector</title>
-    <link rel="stylesheet" href="static/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detective-Phish | About</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Phishing URL Detector</h1>
-    </header>
-    <nav>
-        <br>
+      <h1>🕵️ Detective-Phish</h1>
+      <nav>
         <a href="/">Home</a>
-        <a href="/phishing">URL Verification</a>
-        <a href="/about">About Phishing</a>
-    </nav>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+        <a href="/phishing">Check URL</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
+
+    <main class="center">
+      <section class="glass-card">
+        <h2>About Phishing</h2>
+        <p>
+          Phishing is a type of cybercrime where attackers impersonate
+          legitimate organizations or individuals through emails, messages,
+          websites, or other digital communication. Their goal is to deceive
+          people into revealing sensitive information such as passwords, credit
+          card numbers, or personal data.
+        </p>
+
+        <h3>🔎 How Phishing Works</h3>
+        <ul style="text-align: left">
+          <li>
+            <strong>Fake Emails or Messages:</strong> The attacker sends
+            messages that appear to come from trusted sources like banks, social
+            networks, or government bodies.
+          </li>
+          <li>
+            <strong>Malicious Links:</strong> These messages often contain links
+            that lead to fake websites designed to steal your data.
+          </li>
+          <li>
+            <strong>Urgency and Fear:</strong> Phishing messages create a sense
+            of urgency (e.g., "Your account will be closed!") to make victims
+            act quickly without thinking.
+          </li>
+        </ul>
+
+        <h3>⚠️ Common Signs of Phishing</h3>
+        <ul style="text-align: left">
+          <li>Unexpected requests for personal or financial information.</li>
+          <li>
+            Suspicious URLs or misspelled domains (e.g.,
+            <code>paypa1.com</code> instead of <code>paypal.com</code>).
+          </li>
+          <li>Poor grammar, spelling mistakes, or unprofessional design.</li>
+          <li>
+            Emails that address you generically ("Dear Customer" instead of your
+            name).
+          </li>
+        </ul>
+
+        <h3>🛡️ How Detective-Phish Helps</h3>
+        <p>
+          Detective-Phish analyzes URLs and identifies patterns commonly used by
+          phishing websites. With real-time detection powered by machine
+          learning, it helps you:
+        </p>
+        <ul style="text-align: left">
+          <li>Verify whether a URL is legitimate or suspicious.</li>
+          <li>Avoid falling for phishing scams.</li>
+          <li>Stay informed and make safer choices online.</li>
+        </ul>
+
+        <p>
+          Always stay cautious, double-check links before clicking, and use
+          tools like Detective-Phish to stay protected!
+        </p>
+      </section>
+    </main>
+
     <footer>
-        <p>&copy; 2024 Phishing URL Detector. All rights reserved.</p>
+      <p>&copy; 2025 Detective-Phish. All rights reserved.</p>
     </footer>
-    <script>
-        document.getElementById('url-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const url = document.getElementById('url-input').value;
-            fetch('/predict', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ url: url })
-            })
-            .then(response => response.json())
-            .then(data => {
-                const resultDiv = document.getElementById('result');
-                resultDiv.innerHTML = `<p>${data.url} is ${data.prediction}</p>`;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        });
-    </script>
-</body>
+  </body>
 </html>
